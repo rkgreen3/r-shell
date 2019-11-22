@@ -14,6 +14,10 @@ if("-a" %in% args) {
   }
 } else {args <- args}
 
+if(length(args) == 0) {
+  print("You must give me a file list! To give me all the files use -a.")
+}
+
 for (file in args) {
   out_name <- str_split_fixed(string = file,
                               pattern = "[/|.]",
