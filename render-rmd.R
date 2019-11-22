@@ -8,6 +8,10 @@ args <- commandArgs(trailingOnly = TRUE)
 if("-a" %in% args) {
   folder <- args[2]
   args <- Sys.glob(str_c(folder, "/*.csv"))
+  
+  if(length(args) == 0){
+    print("No files found in your folder dummy.")
+  }
 } else {args <- args}
 
 for (file in args) {
