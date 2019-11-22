@@ -2,6 +2,8 @@ require(rmarkdown)
 require(knitr)
 require(tidyverse)
 
+args <- commandArgs(trailingOnly = TRUE)
+
 render("surveys-report.Rmd",
        output_dir = "reports",
-       params = list(file = "data/plot1.csv"))
+       params = list(file = args))
